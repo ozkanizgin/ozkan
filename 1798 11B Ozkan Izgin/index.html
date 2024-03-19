@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta bilgileri -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Log in, Sign in, Username, Password, Create account, Authentication">
+    <meta name="description" content="Web Site Login Pages | Hurşut Pekyorgun">
+    <title>Web Site Login Pages | Hurşut Pekyorgun</title>
+    <!-- CSS dosyalarının bağlantıları -->
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- JavaScript dosyasının bağlantısı -->
+    <script src="code.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Site logosu -->
+        <div class="logo">Hurşut Pekyorgun</div>
+        <!-- Navigasyon menüsü -->
+        <div>
+            <input id="menubas" type="checkbox" />
+            <label class="menu__btn" for="menubas">
+              <span></span>
+            </label>
+            <ul class="menu__box">
+              <li><a class="menu__item" href="#">Ana Sayfa</a></li>
+              <li><a class="menu__item" href="#">Iletisim</a></li>
+              <li><a class="menu__item" href="#">Satin al</a></li>
+              <li><a class="menu__item" href="#">Buney</a></li>
+              <li><a class="menu__item" href="#">Reklam</a></li>
+            </ul>
+          </div>
+    </header>
+
+    <div class="wrapper">
+        <!-- Giriş formu -->
+        <form action="">
+            <h1>Login</h1>
+            <!-- Kullanıcı adı ve şifre girişi -->
+            <div class="input-box">
+                <input type="text" id="userName" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <!-- "Beni Hatırla" seçeneği ve şifremi unuttum bağlantısı -->
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <!-- Giriş butonu -->
+            <button type="submit" class="btn" onclick="girisKontrolu(document.getElementById('userName').value, document.getElementById('password').value)">Login</button>
+            <!-- Kayıt ol bağlantısı -->
+            <div class="register-link">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

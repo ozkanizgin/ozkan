@@ -1,0 +1,279 @@
+* {
+    margin: 0 auto; /* Tüm öğelerin dış kenar boşluğunu ortalar */
+    padding: 0; /* Tüm öğelerin iç kenar boşluğunu sıfırlar */
+    list-style: none; /* Liste öğelerinin işaretlerini kaldırır */
+    text-decoration: none; /* Metin bağlantılarındaki alt çizgiyi kaldırır */
+    box-sizing: border-box; /* Kutunun içeriğini, kenarlığını ve dolgusunu, toplam genişlik ve yüksekliği hesaplar */
+    font-family: "Google Sans Regular"; /* Metin fontunu belirler */
+    scroll-behavior: smooth;
+}
+#menubas {
+    opacity: 0;
+  }
+
+  #menubas:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menubas:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menubas:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menubas:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    position: absolute;
+    display: block;
+    background-color: #555454;
+    transition-duration: .25s;
+    width: 100%;
+    height: 2px;
+  }
+  .menu__btn > span::before {
+    top: -8px;
+    content: '';
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    width: 285px;
+    margin: 0;
+    padding: 75px 0;
+    list-style: none;
+    position: fixed;
+    height: 100%;
+    background-color: #ECEFF1;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+    transition-duration: .24s;
+    top: 0;
+    left: -100%;
+  }
+  .menu__item {
+    display: block;
+    padding: 10px 23px;
+    font-size: 22px;
+
+    font-weight: 550;
+    text-decoration: none;
+    transition-duration: .24s;
+    color: #382222;
+    font-family: 'Roboto', sans-serif;
+  }
+  .menu__item:hover {
+    background-color: #7ba5b8;
+  }
+
+
+
+
+
+/* Body stil ayarları */
+body {
+    display: flex; /* İçeriği yatay hizalar */
+    justify-content: center; /* İçeriği yatay eksende ortalar */
+    align-items: center; /* İçeriği dikey eksende ortalar */
+    min-height: 100vh; /* Minimum yükseklik belirler, tam pencere yüksekliği kadar genişler */
+    background: url("backgroundbu.png") no-repeat; /* Arka plan resmi ekler ve tekrar etmesini engeller */
+    background-size: cover; /* Arka plan resminin ekran boyutuna uygun şekilde ölçeklenmesini sağlar */
+    background-position: center; /* Arka plan resminin ortalanmasını sağlar */
+}
+
+/* Header stil ayarları */
+header {
+    position: fixed; /* Sayfa kaydırıldığında sabit durmasını sağlar */
+    top: 0; /* Sayfanın üst kısmına yaslanır */
+    left: 0; /* Sayfanın sol kısmına yaslanır */
+    width: 100%; /* Tam genişlik alır */
+    height: 80px; /* Yükseklik belirler */
+    display: flex; /* İçeriği yatay hizalar */
+    align-items: center; /* İçeriği dikey eksende ortalar */
+    justify-content: space-between; /* Öğeler arasında boşluk bırakır */
+    padding: 0 100px; /* Sol ve sağ kenar boşluğunu belirler */
+}
+
+/* Logo stil ayarları */
+.logo {
+    font-size: 1.8em; /* Yazı tipi boyutu */
+    color: #fff; /* Metin rengi */
+    font-weight: bold; /* Metnin kalınlığını belirler */
+    user-select: none; /* Kullanıcı seçimini engeller */
+}
+
+/* Navigasyon menüsü stil ayarları */
+.nav-bar ul {
+    display: flex; /* Liste öğelerini yatay hizalar */
+}
+
+.nav-bar ul li a {
+    position: relative; /* Göreceli konumlandırma sağlar */
+    border-radius: 50px; /* Kenar yuvarlanmasını sağlar */
+    display: block; /* Blok öğe olarak görüntüler */
+    font-size: 1.8em; /* Yazı tipi boyutu */
+    color: #fff; /* Metin rengi */
+    text-decoration: none; /* Metin bağlantılarının alt çizgisini kaldırır */
+    font-weight: 500; /* Metnin kalınlığını belirler */
+    margin-left: 20px; /* Sol kenar boşluğunu belirler */
+    padding: 0.5em; /* Dolgu miktarını belirler */
+    transition: 0.2s; /* Geçiş efekti süresini belirler */
+}
+
+.nav-bar ul li a::after {
+    content: ''; /* Ek içerik ekler */
+    position: absolute; /* Mutlak konumlandırma sağlar */
+    left: 0; /* Sol kenara yaslanır */
+    bottom: -6px; /* Alt kenara yakın konumlandırılır */
+    width: 100%; /* Tam genişlik alır */
+    height: 3px; /* Yükseklik belirler */
+    background: #fff; /* Arkaplan rengi */
+    border-radius: 5px; /* Kenar yuvarlanmasını sağlar */
+    transform-origin: right; /* Dönüşün kaynağını belirler */
+    transform: scaleX(0); /* Ölçeklendirme işlemi uygular */
+    transition: transform .5s; /* Geçiş efekti süresini belirler */
+}
+
+.nav-bar ul li a:hover::after {
+    transform: scaleX(1); /* Ölçeklendirme işlemi uygular */
+    transform-origin: left; /* Dönüşün kaynağını belirler */
+}
+
+/* Giriş butonu stil ayarları */
+.nav-bar .btn-login {
+    color: #333; /* Metin rengi */
+    background: #fff; /* Arkaplan rengi */
+}
+
+.nav-bar .btn-login {
+    background: #fff; /* Arkaplan rengi */
+    color: #162938; /* Metin rengi */
+}
+
+/* Wrapper stil ayarları */
+.wrapper {
+    width: 420px; /* Genişlik */
+    background: transparent; /* Arkaplan rengi */
+    border: 2px solid rgba(255,255,255, .2); /* Kenar rengi ve kalınlığını belirler */
+    backdrop-filter: blur(8px); /* Arkaplanı bulanıklaştırır */
+    box-shadow: 0 0 10px rgba(0,0,0, .2); /* Kutuya gölge ekler */
+    color: #fff; /* Metin rengi */
+    border-radius: 10px; /* Kenar yuvarlanmasını sağlar */
+    padding: 30px 40px; /* Dolgu miktarını belirler */
+}
+
+.wrapper h1 {
+    font-size: 36px; /* Yazı tipi boyutu */
+    text-align: center; /* Metni ortalar */
+}
+
+.wrapper .input-box{
+    position: relative; /* Göreceli konumlandırma sağlar */
+    width: 100%; /* Tam genişlik alır */
+    height: 50px; /* Yükseklik belirler */
+    margin: 30px 0; /* Kenar boşluğunu belirler */
+}
+
+.input-box input{
+    width: 100%; /* Tam genişlik alır */
+    height: 100%; /* Tam yükseklik alır */
+    background: transparent; /* Arkaplan rengi */
+    border: none; /* Kenar çizgisini kaldırır */
+    outline: none; /* Odaklanma efektini kaldırır */
+    border: 2px solid rgba(255,255,255, .2); /* Kenar rengi ve kalınlığını belirler */
+    border-radius: 40px; /* Kenar yuvarlanmasını sağlar */
+    font-size: 16px; /* Yazı tipi boyutu */
+    color: #fff; /* Metin rengi */
+    padding: 20px 45px 20px 20px; /* Dolgu miktarını belirler */
+}
+
+.input-box input::placeholder{
+    color: #fff; /* Metin rengi */
+}
+
+.input-box i{
+    position: absolute; /* Mutlak konumlandırma sağlar */
+    right: 20px; /* Sağ kenara yakın konumlandırılır */
+    top: 50%; /* Yatay eksende ortalar */
+    transform: translateY(-50%); /* Dikey eksende ortalar */
+    font-size: 20px; /* Yazı tipi boyutu */
+}
+
+.wrapper .remember-forgot {
+    display: flex; /* İçeriği yatay hizalar */
+    justify-content: space-between; /* Öğeler arasında boşluk bırakır */
+    font-size: 14.5px; /* Yazı tipi boyutu */
+    margin: -15px 0 15px; /* Kenar boşluğunu belirler */
+}
+
+.remember-forgot label input{
+    accent-color: #fff; /* Betik içeriği rengi */
+    margin-right: 3px; /* Sağ kenar boşluğunu belirler */
+}
+
+.remember-forgot a {
+    color: #fff; /* Metin rengi */
+    text-decoration: none; /* Metin bağlantılarındaki alt çizgiyi kaldırır */
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline; /* Metin bağlantısının altını çizer */
+}
+
+.wrapper .btn {
+    width: 100%; /* Tam genişlik alır */
+    height: 45px; /* Yükseklik belirler */
+    background: #fff; /* Arkaplan rengi */
+    border: none; /* Kenar çizgisini kaldırır */
+    outline: none; /* Odaklanma efektini kaldırır */
+    border-radius: 40px; /* Kenar yuvarlanmasını sağlar */
+    box-shadow: 0 0 10px rgba(0,0,0, .1); /* Kutuya gölge ekler */
+    cursor: pointer; /* Fare işaretçisini değiştirir */
+    font-size: 16px; /* Yazı tipi boyutu */
+    color: #333; /* Metin rengi */
+    font-weight: 600; /* Metnin kalınlığını belirler */
+}
+
+.wrapper .register-link {
+    font-size: 14.5px; /* Yazı tipi boyutu */
+    text-align: center; /* Metni ortalar */
+    margin: 20px 0 15px; /* Kenar boşluğunu belirler */
+}
+
+.register-link p a {
+    color: #fff; /* Metin rengi */
+    text-decoration: none; /* Metin bağlantılarındaki alt çizgiyi kaldırır */
+    font-weight: 600; /* Metnin kalınlığını belirler */
+}
+
+.register-link p a:hover {
+    text-decoration: underline; /* Metin bağlantısının altını çizer */
+}
+
+/* Ekran boyutları için medya sorguları */
+@media only screen and (max-width: 1320px) {
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+}
+
+@media only screen and (max-width: 900px) {
+
+}
